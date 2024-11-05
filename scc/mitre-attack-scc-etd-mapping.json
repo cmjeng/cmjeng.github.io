@@ -1,0 +1,168 @@
+{
+	"name": "Google Cloud - Security Command Center ",
+	"versions": {
+		"attack": "16",
+		"navigator": "5.1.0",
+		"layer": "4.5"
+	},
+	"domain": "enterprise-attack",
+	"description": "",
+	"filters": {
+		"platforms": [
+			"Windows",
+			"Linux",
+			"macOS",
+			"Network",
+			"PRE",
+			"Containers",
+			"IaaS",
+			"SaaS",
+			"Office Suite",
+			"Identity Provider"
+		]
+	},
+	"sorting": 0,
+	"layout": {
+		"layout": "side",
+		"aggregateFunction": "average",
+		"showID": false,
+		"showName": true,
+		"showAggregateScores": false,
+		"countUnscored": false,
+		"expandedSubtechniques": "none"
+	},
+	"hideDisabled": false,
+	"techniques": [
+		{
+			"techniqueID": "T1071",
+			"tactic": "command-and-control",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1071.001",
+			"tactic": "command-and-control",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Malware: bad IP",
+					"value": "Detection of malware based on a connection to a known bad IP address."
+				}
+			],
+			"links": [
+				{
+					"label": "Malware",
+					"url": "https://cloud.google.com/security-command-center/docs/how-to-investigate-threats#malware"
+				}
+			],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1190",
+			"tactic": "initial-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Active Scan: Log4j Vulnerable to RCE",
+					"value": "Detects active Log4j vulnerabilities by identifying DNS queries for unobfuscated domains that were initiated by supported Log4j vulnerability scanners."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1205",
+			"tactic": "command-and-control",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1090",
+			"tactic": "command-and-control",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1102",
+			"tactic": "command-and-control",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1485",
+			"tactic": "impact",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Data Destruction: Google Cloud Backup and DR expire image",
+					"value": "A user requested the deletion of a backup image from Backup and DR. The deletion of a backup image does not prevent future backups."
+				}
+			],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1490",
+			"tactic": "impact",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Inhibit System Recovery: Deleted Google Cloud Backup and DR host",
+					"value": "A host was deleted from Backup and DR. Applications that are associated with the deleted host might not be protected."
+				},
+				{
+					"name": "Inhibit System Recovery: Google Cloud Backup and DR remove plan",
+					"value": "A backup plan with multiple policies for an application was deleted from Backup and DR. The deletion of a backup plan can prevent future backups."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		}
+	],
+	"gradient": {
+		"colors": [
+			"#ff6666ff",
+			"#ffe766ff",
+			"#8ec843ff"
+		],
+		"minValue": 0,
+		"maxValue": 100
+	},
+	"legendItems": [],
+	"metadata": [],
+	"links": [
+		{
+			"label": "SCC-ETD",
+			"url": "https://cloud.google.com/security-command-center/docs/concepts-event-threat-detection-overview#rules"
+		}
+	],
+	"showTacticRowBackground": false,
+	"tacticRowBackground": "#dddddd",
+	"selectTechniquesAcrossTactics": true,
+	"selectSubtechniquesWithParent": false,
+	"selectVisibleTechniques": false
+}

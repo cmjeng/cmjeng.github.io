@@ -34,16 +34,6 @@
 	"hideDisabled": false,
 	"techniques": [
 		{
-			"techniqueID": "T1071",
-			"tactic": "command-and-control",
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": true
-		},
-		{
 			"techniqueID": "T1071.001",
 			"tactic": "command-and-control",
 			"color": "#a1d99b",
@@ -79,34 +69,14 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1205",
-			"tactic": "command-and-control",
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": true
-		},
-		{
 			"techniqueID": "T1090",
 			"tactic": "command-and-control",
-			"color": "",
+			"color": "#a1d99b",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
-		},
-		{
-			"techniqueID": "T1102",
-			"tactic": "command-and-control",
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1485",
@@ -118,10 +88,18 @@
 				{
 					"name": "Data Destruction: Google Cloud Backup and DR expire image",
 					"value": "A user requested the deletion of a backup image from Backup and DR. The deletion of a backup image does not prevent future backups."
+				},
+				{
+					"name": "Data Destruction: Google Cloud Backup and DR expire all images",
+					"value": "A user requested the deletion of all backup images for a protected application from Backup and DR."
+				},
+				{
+					"name": "Data Destruction: Google Cloud Backup and DR remove appliance",
+					"value": "A backup appliance was deleted from Backup and DR. "
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1490",
@@ -137,6 +115,621 @@
 				{
 					"name": "Inhibit System Recovery: Google Cloud Backup and DR remove plan",
 					"value": "A backup plan with multiple policies for an application was deleted from Backup and DR. The deletion of a backup plan can prevent future backups."
+				},
+				{
+					"name": "Impact: Google Cloud Backup and DR reduced backup expiration",
+					"value": "The expiration date for a backup protected by Backup and DR has been reduced."
+				},
+				{
+					"name": "Impact: Google Cloud Backup and DR reduced backup frequency",
+					"value": "The Backup and DR backup schedule has been modified to reduce backup frequency."
+				},
+				{
+					"name": "Inhibit System Recovery: Deleted Google Cloud Backup and DR host",
+					"value": "A host was deleted from Backup and DR."
+				},
+				{
+					"name": "Inhibit System Recovery: Google Cloud Backup and DR delete policy",
+					"value": "A Backup and DR policy, which defines how a backup is taken and where it is stored, was deleted."
+				},
+				{
+					"name": "Inhibit System Recovery: Google Cloud Backup and DR delete profile",
+					"value": "A Backup and DR profile, which defines which storage pools should be used to store backups, was deleted. Future backups that use the profile might fail."
+				},
+				{
+					"name": "Inhibit System Recovery: Google Cloud Backup and DR delete storage pool",
+					"value": "A storage pool, which associates a Cloud Storage bucket with Backup and DR, has been removed from Backup and DR. "
+				},
+				{
+					"name": "Inhibit System Recovery: Google Cloud Backup and DR delete template",
+					"value": "A predefined backup template, which is used to set up backups for multiple applications, was deleted."
+				},
+				{
+					"name": "Inhibit System Recovery: Google Cloud Backup and DR remove plan",
+					"value": "A backup plan with multiple policies for an application was deleted from Backup and DR."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1613",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Discovery: Can get sensitive Kubernetes object check",
+					"value": "A potentially malicious actor attempted to determine what sensitive objects in GKE they can query for, by using the kubectl auth can-i get command."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1069",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1069.003",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Discovery: Service Account Self-Investigation",
+					"value": "Detection of an IAM service account credential that is used t investigate the roles and permissions associated with that same service account."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1489",
+			"tactic": "impact",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Impact: Billing Disabled",
+					"value": "Detects when billing has been disabled for a project."
+				},
+				{
+					"name": "Impact: Billing Disabled",
+					"value": "Detects when billing has been disabled for multiple projects in an organization within a short time period."
+				},
+				{
+					"name": "Impact: Service API Disabled",
+					"value": "Detects when a Google Cloud service API is disabled in a production environment."
+				},
+				{
+					"name": "Impact: VPC Firewall High Priority Block",
+					"value": "Detects when a VPC firewall rule that blocks all traffic is added at priority 0."
+				},
+				{
+					"name": "Impact: VPC Firewall Mass Rule Deletion",
+					"value": "Detects the mass deletion of VPC firewall rules by non-service accounts."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1071.004",
+			"tactic": "command-and-control",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Command and Control: DNS Tunneling",
+					"value": "Detects the handshake of the DNS tunneling tool Iodine."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.001",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Anonymous Sessions Granted Cluster Admin Access",
+					"value": "Detects the creation of a role-based access control (RBAC) ClusterRoleBinding object adding the root-cluster-admin-binding behavior to anonymous users."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1567",
+			"tactic": "exfiltration",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1567.002",
+			"tactic": "exfiltration",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Exfiltration: BigQuery Data Exfiltration",
+					"value": "1) Resources owned by the protected organization that are saved outside of the organization, including copy or transfer operations. 2) Attempts to access BigQuery resources that are protected by VPC Service Controls."
+				},
+				{
+					"name": "Exfiltration: BigQuery Data Extraction",
+					"value": "1) A BigQuery resource owned by the protected organization is saved, through extraction operations, to a Cloud Storage bucket outside the organization. 2)A BigQuery resource owned by the protected organization is saved, through extraction operations, to a publicly accessible Cloud Storage bucket owned by that organization."
+				},
+				{
+					"name": "Exfiltration: BigQuery Data to Google Drive",
+					"value": "A BigQuery resource owned by the protected organization is saved, through extraction operations, to a Google Drive folder."
+				},
+				{
+					"name": "Exfiltration: Move to Public BigQuery resource",
+					"value": "A BigQuery resource is saved to a public resource owned by your organization."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1036",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Potential Kubernetes Pod Masquerading",
+					"value": "Someone deployed a Pod with a naming convention similar to the default workloads that GKE creates for regular cluster operation. "
+				},
+				{
+					"name": "Defense Evasion: VPC Route Masquerade Attempt",
+					"value": "Detects the manual creation of VPC routes masquerading as Google Cloud default routes, allowing egress traffic to external IP addresses."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1580",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Discovery: Unauthorized Service Account API Call",
+					"value": "Detects when a service account makes an unauthorized cross-project API call."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1548",
+			"tactic": "privilege-escalation",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Created",
+					"value": "Detects the deployment of workloads that are deployed by using the break-glass flag to override Binary Authorization controls."
+				},
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Updated",
+					"value": "Detects when workloads are updated by using the break-glass flag to override Binary Authorization controls."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1548",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Created",
+					"value": "Detects the deployment of workloads that are deployed by using the break-glass flag to override Binary Authorization controls."
+				},
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Updated",
+					"value": "Detects when workloads are updated by using the break-glass flag to override Binary Authorization controls."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1090.003",
+			"tactic": "command-and-control",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Evasion: Access from Anonymizing Proxy",
+					"value": "Detection of Google Cloud service modifications that originated from anonymous proxy IP addresses, like Tor IP addresses."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1059",
+			"tactic": "execution",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Execution: Kubernetes Pod Created with Potential Reverse Shell Arguments",
+					"value": "Someone created a Pod that contains commands or arguments commonly associated with a reverse shell."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1070",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Manually Deleted Certificate Signing Request (CSR)",
+					"value": "Someone manually deleted a certificate signing request (CSR)."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1609",
+			"tactic": "execution",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Execution: Suspicious Exec or Attach to a System Pod",
+					"value": "Someone used the exec or attach commands to get a shell or execute a command on a container running in the kube-system namespace. "
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1649",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Credential Access: Failed Attempt to Approve Kubernetes Certificate Signing Request (CSR)",
+					"value": "Someone attempted to manually approve a certificate signing request (CSR) but the action failed."
+				},
+				{
+					"name": "Credential Access: Manually Approved Kubernetes Certificate Signing Request (CSR)",
+					"value": "Someone manually approved a certificate signing request (CSR)."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1528",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Credential Access: Secrets Accessed In Kubernetes Namespace",
+					"value": "Detects when secrets or service account tokens are accessed by a service account in the current Kubernetes namespace."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1098",
+			"tactic": "persistence",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Impair Defenses: Strong Authentication Disabled",
+					"value": "2-step verification was disabled for the organization."
+				},
+				{
+					"name": "Impair Defenses: Two Step Verification Disabled",
+					"value": "A user disabled 2-step verification."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1098",
+			"tactic": "privilege-escalation",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Impair Defenses: Strong Authentication Disabled",
+					"value": "2-step verification was disabled for the organization."
+				},
+				{
+					"name": "Impair Defenses: Two Step Verification Disabled",
+					"value": "A user disabled 2-step verification."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.004",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Credential Access: External Member Added To Privileged Group",
+					"value": "Detects events where an external member is added to a privileged Google Group (a group granted sensitive roles or permissions)"
+				},
+				{
+					"name": "Credential Access: Privileged Group Opened To Public",
+					"value": "Detects events where a privileged Google Group (a group granted sensitive roles or permissions) is changed to be accessible to the general public."
+				},
+				{
+					"name": "Credential Access: Sensitive Role Granted To Hybrid Group",
+					"value": "Detects events where sensitive roles are granted to a Google Group with external members."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.004",
+			"tactic": "persistence",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Credential Access: External Member Added To Privileged Group",
+					"value": "Detects events where an external member is added to a privileged Google Group (a group granted sensitive roles or permissions)"
+				},
+				{
+					"name": "Credential Access: Privileged Group Opened To Public",
+					"value": "Detects events where a privileged Google Group (a group granted sensitive roles or permissions) is changed to be accessible to the general public."
+				},
+				{
+					"name": "Credential Access: Sensitive Role Granted To Hybrid Group",
+					"value": "Detects events where sensitive roles are granted to a Google Group with external members."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.004",
+			"tactic": "privilege-escalation",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Credential Access: External Member Added To Privileged Group",
+					"value": "Detects events where an external member is added to a privileged Google Group (a group granted sensitive roles or permissions)"
+				},
+				{
+					"name": "Credential Access: Privileged Group Opened To Public",
+					"value": "Detects events where a privileged Google Group (a group granted sensitive roles or permissions) is changed to be accessible to the general public."
+				},
+				{
+					"name": "Credential Access: Sensitive Role Granted To Hybrid Group",
+					"value": "Detects events where sensitive roles are granted to a Google Group with external members."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.004",
+			"tactic": "initial-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Credential Access: External Member Added To Privileged Group",
+					"value": "Detects events where an external member is added to a privileged Google Group (a group granted sensitive roles or permissions)"
+				},
+				{
+					"name": "Credential Access: Privileged Group Opened To Public",
+					"value": "Detects events where a privileged Google Group (a group granted sensitive roles or permissions) is changed to be accessible to the general public."
+				},
+				{
+					"name": "Credential Access: Sensitive Role Granted To Hybrid Group",
+					"value": "Detects events where sensitive roles are granted to a Google Group with external members."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.003",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Brute force SSH",
+					"value": "Detection of successful brute force of SSH on a host."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.003",
+			"tactic": "persistence",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Brute force SSH",
+					"value": "Detection of successful brute force of SSH on a host."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.003",
+			"tactic": "privilege-escalation",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Brute force SSH",
+					"value": "Detection of successful brute force of SSH on a host."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078.003",
+			"tactic": "initial-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Brute force SSH",
+					"value": "Detection of successful brute force of SSH on a host."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1496",
+			"tactic": "impact",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Impact: Managed Instance Group Autoscaling Set To Maximum",
+					"value": "Detects when a managed instance group is configured for maximum autoscaling."
+				},
+				{
+					"name": "Impact: Suspicious Kubernetes Container Names - Coin Mining",
+					"value": "Someone deployed a Pod with a naming convention similar to common cryptocurrency coin miners."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1526",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Discovery: Information Gathering Tool Used",
+					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1556",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Modify VPC Service Control",
+					"value": "Detects a change to an existing VPC Service Controls perimeter that would lead to a reduction in the protection offered by that perimeter."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1556",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Modify VPC Service Control",
+					"value": "Detects a change to an existing VPC Service Controls perimeter that would lead to a reduction in the protection offered by that perimeter."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1556",
+			"tactic": "persistence",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Modify VPC Service Control",
+					"value": "Detects a change to an existing VPC Service Controls perimeter that would lead to a reduction in the protection offered by that perimeter."
 				}
 			],
 			"links": [],

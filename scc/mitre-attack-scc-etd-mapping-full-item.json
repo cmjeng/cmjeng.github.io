@@ -2014,6 +2014,61 @@
 			],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1040",
+			"tactic": "credential-access",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(SHA) DEFAULT_NETWORK",
+					"value": "Default networks have automatically created firewall rules and network configurations which might not be secure."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1040",
+			"tactic": "discovery",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(SHA) DEFAULT_NETWORK",
+					"value": "Default networks have automatically created firewall rules and network configurations which might not be secure."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1021",
+			"tactic": "lateral-movement",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1021.004",
+			"tactic": "lateral-movement",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(SHA) Open SSH port",
+					"value": "Firewall rules that allow any IP address to connect to SSH ports might expose your SSH services to attackers."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
 		}
 	],
 	"gradient": {

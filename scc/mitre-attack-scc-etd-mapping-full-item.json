@@ -401,7 +401,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1567.002",
@@ -2056,6 +2056,21 @@
 			"showSubtechniques": true
 		},
 		{
+			"techniqueID": "T1021.001",
+			"tactic": "lateral-movement",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(SHA) Open RDP port",
+					"value": "Firewall rules that allow any IP address to connect to RDP ports might expose your RDP services to attackers. "
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
 			"techniqueID": "T1021.004",
 			"tactic": "lateral-movement",
 			"color": "#fce93b",
@@ -2065,6 +2080,36 @@
 				{
 					"name": "(SHA) Open SSH port",
 					"value": "Firewall rules that allow any IP address to connect to SSH ports might expose your SSH services to attackers."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1048",
+			"tactic": "exfiltration",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Command and Control: DNS Tunneling",
+					"value": "Detects the handshake of the DNS tunneling tool Iodine."
+				}
+			],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1046",
+			"tactic": "discovery",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(SHA) OPEN_FIREWALL",
+					"value": "Firewall rules that allow connections from all IP addresses, like 0.0.0.0/0, or from all ports can unnecessarily expose resources to attacks from unintended sources."
 				}
 			],
 			"links": [],

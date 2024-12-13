@@ -270,7 +270,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1069.003",
@@ -583,7 +583,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1070",
@@ -598,7 +598,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1609",
@@ -1157,7 +1157,7 @@
 					"divider": true
 				},
 				{
-					"name": "nitial Access: Account Disabled Hijacked",
+					"name": "Credenitial Access: Account Disabled Hijacked",
 					"value": "A user's account was suspended due to suspicious activity."
 				},
 				{
@@ -1295,7 +1295,7 @@
 					"divider": true
 				},
 				{
-					"name": "nitial Access: Account Disabled Hijacked",
+					"name": "Credenitial Access: Account Disabled Hijacked",
 					"value": "A user's account was suspended due to suspicious activity."
 				},
 				{
@@ -1433,7 +1433,7 @@
 					"divider": true
 				},
 				{
-					"name": "nitial Access: Account Disabled Hijacked",
+					"name": "Credenitial Access: Account Disabled Hijacked",
 					"value": "A user's account was suspended due to suspicious activity."
 				},
 				{
@@ -1571,7 +1571,7 @@
 					"divider": true
 				},
 				{
-					"name": "nitial Access: Account Disabled Hijacked",
+					"name": "Credenitial Access: Account Disabled Hijacked",
 					"value": "A user's account was suspended due to suspicious activity."
 				},
 				{
@@ -2023,8 +2023,15 @@
 			"enabled": true,
 			"metadata": [
 				{
-					"name": "(SHA) DEFAULT_NETWORK",
-					"value": "Default networks have automatically created firewall rules and network configurations which might not be secure."
+					"name": "(SHA) SSL_NOT_ENFORCED",
+					"value": "A Cloud SQL database instance doesn't require all incoming connections to use SSL."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) WEAK_SSL_POLICY",
+					"value": "A Compute Engine instance has a weak SSL policy or uses the Google Cloud default SSL policy with TLS version less than 1.2."
 				}
 			],
 			"links": [],
@@ -2038,8 +2045,15 @@
 			"enabled": true,
 			"metadata": [
 				{
-					"name": "(SHA) DEFAULT_NETWORK",
-					"value": "Default networks have automatically created firewall rules and network configurations which might not be secure."
+					"name": "(SHA) SSL_NOT_ENFORCED",
+					"value": "A Cloud SQL database instance doesn't require all incoming connections to use SSL."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) WEAK_SSL_POLICY",
+					"value": "A Compute Engine instance has a weak SSL policy or uses the Google Cloud default SSL policy with TLS version less than 1.2."
 				}
 			],
 			"links": [],
@@ -2110,6 +2124,90 @@
 				{
 					"name": "(SHA) OPEN_FIREWALL",
 					"value": "Firewall rules that allow connections from all IP addresses, like 0.0.0.0/0, or from all ports can unnecessarily expose resources to attacks from unintended sources."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1080",
+			"tactic": "lateral-movement",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Lateral Movement: Modified Boot Disk Attached to Instance",
+					"value": "Detects when a boot disk is detached from one Compute Engine instance and attached to another, which could indicate a malicious attempt to compromise the system using a modified boot disk."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1074",
+			"tactic": "collection",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1049",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "INFORMATION_GATHERING_TOOL_USED",
+					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1072",
+			"tactic": "execution",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Created",
+					"value": "Detects the deployment of workloads that are deployed by using the break-glass flag to override Binary Authorization controls."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Updated",
+					"value": "Detects when workloads are updated by using the break-glass flag to override Binary Authorization controls."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1072",
+			"tactic": "lateral-movement",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Created",
+					"value": "Detects the deployment of workloads that are deployed by using the break-glass flag to override Binary Authorization controls."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Defense Evasion: Breakglass Workload Deployment Updated",
+					"value": "Detects when workloads are updated by using the break-glass flag to override Binary Authorization controls."
 				}
 			],
 			"links": [],

@@ -709,7 +709,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1098",
@@ -1126,7 +1126,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1078.004",
@@ -2145,6 +2145,53 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1119",
+			"tactic": "collection",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Discovery: Information Gathering Tool Used",
+					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Discovery: Unauthorized Service Account API Call",
+					"value": "Detects when a service account makes an unauthorized cross-project API call."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1087",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1087.004",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Discovery: Service Account Self-Investigation",
+					"value": "Detection of an IAM service account credential that is used t investigate the roles and permissions associated with that same service account."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
 			"techniqueID": "T1074",
 			"tactic": "collection",
 			"color": "",
@@ -2208,6 +2255,36 @@
 				{
 					"name": "Defense Evasion: Breakglass Workload Deployment Updated",
 					"value": "Detects when workloads are updated by using the break-glass flag to override Binary Authorization controls."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1110",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Initial Access: Suspicious Login Blocked",
+					"value": "A suspicious login to a user's account was detected and blocked."
+				}
+			],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1110.001",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Brute force SSH",
+					"value": "Detection of successful brute force of SSH on a host."
 				}
 			],
 			"links": [],

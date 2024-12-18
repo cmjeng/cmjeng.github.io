@@ -65,12 +65,32 @@
 					"value": "Detects active Log4j vulnerabilities by identifying DNS queries for unobfuscated domains that were initiated by supported Log4j vulnerability scanners."
 				},
 				{
+					"divider": true
+				},
+				{
 					"name": "Initial Access: Anonymous GKE Resource Created from the Internet",
 					"value": "Detects resource creation events from effectively anonymous internet users."
 				},
 				{
+					"divider": true
+				},
+				{
 					"name": "Initial Access: GKE Resource Modified Anonymously from the Internet",
 					"value": "Detects resource manipulation events from effectively anonymous internet users."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Allowed traffic spike",
+					"value": "The Allowed traffic spike finding notifies you of a spike in allowed traffic on a per-backend-service basis."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Increasing deny ratio",
+					"value": "The Increasing deny ratio finding notifies you that there is an increase in the ratio of traffic that Google Cloud Armor blocks because of a user-configured rule in a security policy."
 				}
 			],
 			"links": [],
@@ -282,6 +302,20 @@
 				{
 					"name": "Discovery: Service Account Self-Investigation",
 					"value": "Detection of an IAM service account credential that is used t investigate the roles and permissions associated with that same service account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Discovery: Information Gathering Tool Used",
+					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(CTD) Execution: Local Reconnaissance Tool Execution",
+					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
 				}
 			],
 			"links": [],
@@ -588,6 +622,41 @@
 				{
 					"name": "Execution: Kubernetes Pod Created with Potential Reverse Shell Arguments",
 					"value": "Someone created a Pod that contains commands or arguments commonly associated with a reverse shell."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Execution: Suspicious Exec or Attach to a System Pod",
+					"value": "Someone used the exec or attach commands to get a shell or execute a command on a container running in the kube-system namespace. "
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(CTD) Reverse Shell",
+					"value": "A process started with stream redirection to a remote connected socket."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(CTD) Unexpected Child Shell",
+					"value": "A process that does not normally invoke shells spawned a shell process."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(VMTD) Defense Evasion: Unexpected kernel code modification",
+					"value": "Unexpected modifications of kernel code memory are present."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(VMTD) Defense Evasion: Unexpected processes in runqueue",
+					"value": "Unexpected processes in the scheduler run queue are present. Such processes are in the run queue, but not in the process task list."
 				}
 			],
 			"links": [],
@@ -596,17 +665,59 @@
 		{
 			"techniqueID": "T1070",
 			"tactic": "defense-evasion",
-			"color": "#a1d99b",
+			"color": "#fcf26b",
 			"comment": "",
 			"enabled": true,
 			"metadata": [
 				{
 					"name": "Defense Evasion: Manually Deleted Certificate Signing Request (CSR)",
 					"value": "Someone manually deleted a certificate signing request (CSR)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Audit logging disabled",
+					"value": "Audit logging is disabled for one or more Google Cloud services, or one or more principals are exempt from data access audit logging."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Bucket logging disabled",
+					"value": "To help investigate security issues and monitor storage consumption, enable access logs and storage information for your Cloud Storage buckets. Access logs provide information for all requests made on a specified bucket"
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Logging isn't enabled for a GKE cluster.",
+					"value": "Logging isn't enabled for a GKE cluster."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) DNS logging disabled",
+					"value": "Monitoring of Cloud DNS logs provides visibility to DNS names requested by the clients within the VPC network. These logs can be monitored for anomalous domain names and evaluated against threat intelligence."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Flow logs disabled",
+					"value": "VPC Flow Logs record a sample of network flows sent from and received by VM instances. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Load balancer logging disabled",
+					"value": "Enabling logging for a load balancer allows you to view HTTP(S) network traffic for your web applications."
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1609",
@@ -652,6 +763,9 @@
 				{
 					"name": "Credential Access: Failed Attempt to Approve Kubernetes Certificate Signing Request (CSR)",
 					"value": "Someone attempted to manually approve a certificate signing request (CSR) but the action failed."
+				},
+				{
+					"divider": true
 				},
 				{
 					"name": "Credential Access: Manually Approved Kubernetes Certificate Signing Request (CSR)",
@@ -1162,7 +1276,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1078.004",
@@ -1901,8 +2015,14 @@
 					"value": "Detects when a managed instance group is configured for maximum autoscaling."
 				},
 				{
+					"divider": true
+				},
+				{
 					"name": "Impact: Suspicious Kubernetes Container Names - Coin Mining",
 					"value": "Someone deployed a Pod with a naming convention similar to common cryptocurrency coin miners."
+				},
+				{
+					"divider": true
 				},
 				{
 					"name": "Malware: Cryptomining Bad Domain",
@@ -1914,7 +2034,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1588",
@@ -2030,6 +2150,27 @@
 				{
 					"name": "Defense Evasion: Modify VPC Service Control",
 					"value": "Detects a change to an existing VPC Service Controls perimeter that would lead to a reduction in the protection offered by that perimeter."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: SSO Enablement Toggle",
+					"value": "The Enable SSO (single sign-on) setting on the admin account was disabled."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: SSO Settings Changed",
+					"value": "The SSO settings for the admin account were changed."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Impair Defenses: Strong Authentication Disabled",
+					"value": "2-step verification was disabled for the organization."
 				}
 			],
 			"links": [],
@@ -2045,6 +2186,27 @@
 				{
 					"name": "Defense Evasion: Modify VPC Service Control",
 					"value": "Detects a change to an existing VPC Service Controls perimeter that would lead to a reduction in the protection offered by that perimeter."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: SSO Enablement Toggle",
+					"value": "The Enable SSO (single sign-on) setting on the admin account was disabled."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: SSO Settings Changed",
+					"value": "The SSO settings for the admin account were changed."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Impair Defenses: Strong Authentication Disabled",
+					"value": "2-step verification was disabled for the organization."
 				}
 			],
 			"links": [],
@@ -2060,6 +2222,27 @@
 				{
 					"name": "Defense Evasion: Modify VPC Service Control",
 					"value": "Detects a change to an existing VPC Service Controls perimeter that would lead to a reduction in the protection offered by that perimeter."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: SSO Enablement Toggle",
+					"value": "The Enable SSO (single sign-on) setting on the admin account was disabled."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: SSO Settings Changed",
+					"value": "The SSO settings for the admin account were changed."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Impair Defenses: Strong Authentication Disabled",
+					"value": "2-step verification was disabled for the organization."
 				}
 			],
 			"links": [],
@@ -2167,13 +2350,34 @@
 		{
 			"techniqueID": "T1046",
 			"tactic": "discovery",
-			"color": "#fce93b",
+			"color": "#a1d99b",
 			"comment": "",
 			"enabled": true,
 			"metadata": [
 				{
 					"name": "(SHA) OPEN_FIREWALL",
 					"value": "Firewall rules that allow connections from all IP addresses, like 0.0.0.0/0, or from all ports can unnecessarily expose resources to attacks from unintended sources."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Default network",
+					"value": "Default networks have automatically created firewall rules and network configurations which might not be secure. "
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Discovery: Information Gathering Tool Used",
+					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Resource Development: Offensive Security Distro Activity",
+					"value": "Detects successful Google Cloud resource manipulations from known penetration testing or offensive security distros."
 				}
 			],
 			"links": [],
@@ -2189,6 +2393,27 @@
 				{
 					"name": "Lateral Movement: Modified Boot Disk Attached to Instance",
 					"value": "Detects when a boot disk is detached from one Compute Engine instance and attached to another, which could indicate a malicious attempt to compromise the system using a modified boot disk."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Workload with shareProcessNamespace enabled",
+					"value": "Someone deployed a workload with the shareProcessNamespace option set to true, allowing all containers to share the same Linux process namespace. This could allow an untrusted or compromised container to escalate privileges by accessing and controlling environment variables, memory, and other sensitive data from processes running in other containers."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: Global Startup Script Added",
+					"value": "Detects when a global startup script is added to a project."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Global Shutdown Script Added",
+					"value": "Detects when a global shutdown script is added to a project."
 				}
 			],
 			"links": [],
@@ -2211,6 +2436,20 @@
 				{
 					"name": "Discovery: Unauthorized Service Account API Call",
 					"value": "Detects when a service account makes an unauthorized cross-project API call."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Resource Development: Offensive Security Distro Activity",
+					"value": "Detects successful Google Cloud resource manipulations from known penetration testing or offensive security distros."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(CTD) Execution: Local Reconnaissance Tool Execution",
+					"value": "The detector monitors for known reconnaissance tools being executed within the environment, identified through threat intelligence, which could indicate preparation for more malicious activities."
 				}
 			],
 			"links": [],
@@ -2244,7 +2483,7 @@
 		{
 			"techniqueID": "T1074",
 			"tactic": "collection",
-			"color": "",
+			"color": "#a1d99b",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
@@ -2261,6 +2500,20 @@
 				{
 					"name": "INFORMATION_GATHERING_TOOL_USED",
 					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Discovery: Unauthorized Service Account API Call",
+					"value": "Detects when a service account makes an unauthorized cross-project API call."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(CTD) Execution: Local Reconnaissance Tool Execution",
+					"value": "The detector monitors for known reconnaissance tools being executed within the environment, identified through threat intelligence, which could indicate preparation for more malicious activities."
 				}
 			],
 			"links": [],
@@ -2320,10 +2573,17 @@
 				{
 					"name": "Initial Access: Suspicious Login Blocked",
 					"value": "A suspicious login to a user's account was detected and blocked."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Brute force SSH",
+					"value": "Detection of successful brute force of SSH on a host."
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1110.001",
@@ -2339,6 +2599,117 @@
 			],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1539",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: New Geography",
+					"value": "Detection of IAM user and service accounts accessing Google Cloud from anomalous locations, based on the geolocation of the requesting IP addresses."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: New User Agent",
+					"value": "Detection of IAM service accounts accessing Google Cloud from anomalous or suspicious user agents."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Suspicious Login Blocked",
+					"value": "A suspicious login to a user's account was detected and blocked."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Evasion: Access from Anonymizing Proxy",
+					"value": "Evasion: Access from Anonymizing Proxy"
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1578",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1578.005",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: GCE Admin Added SSH Key",
+					"value": "Detection of a modification to the Compute Engine instance metadata ssh key value on an established instance (older than 1 week)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: GCE Admin Added Startup Script",
+					"value": "Detection of a modification to the Compute Engine instance metadata startup script value on an established instance (older than 1 week)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Lateral Movement: Modified Boot Disk Attached to Instance",
+					"value": "Detects when a boot disk is detached from one Compute Engine instance and attached to another, which could indicate a malicious attempt to compromise the system using a modified boot disk."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1564",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(VMTD) Defense Evasion: Rootkit\t",
+					"value": "A combination of signals matching a known kernel-mode rootkit is present. "
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(VMTD) Defense Evasion: Unexpected kernel read-only data modification",
+					"value": "Unexpected modifications of kernel read-only data memory are present."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Defense Evasion: VPC Route Masquerade Attempt",
+					"value": "Detects the manual creation of VPC routes masquerading as Google Cloud default routes, allowing egress traffic to external IP addresses."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Defense Evasion: Potential Kubernetes Pod Masquerading",
+					"value": "Someone deployed a Pod with a naming convention similar to the default workloads that GKE creates for regular cluster operation."
+				}
+			],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1530",
@@ -2368,6 +2739,67 @@
 			],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1555",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1555.006",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Discovery: Can get sensitive Kubernetes object check",
+					"value": "A potentially malicious actor attempted to determine what sensitive objects in GKE they can query for, by using the kubectl auth can-i get command."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Credential Access: Secrets Accessed In Kubernetes Namespace",
+					"value": "Detects when secrets or service account tokens are accessed by a service account in the current Kubernetes namespace."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Cluster secrets encryption disabled",
+					"value": "Application-layer secrets encryption ensures GKE secrets are encrypted using Cloud KMS keys. The feature provides an additional layer of security for sensitive data, such as user-defined secrets and secrets required for the operation of the cluster, such as service account keys, which are all stored in etcd."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1552",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Initial Access: Leaked Service Account Key Used",
+					"value": "Detects events where a leaked service account key is used to authenticate the action. In this context, a leaked service account key is one that was posted on the public internet."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Disabled Password Leak",
+					"value": "A user's account is disabled because a password leak was detected."
+				}
+			],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1525",
@@ -2417,6 +2849,100 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1550",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Initial Access: Dormant Service Account Key Created",
+					"value": "Detects events where a key is created for a dormant user-managed service account. In this context, a service account is considered dormant if it has been inactive for more than 180 days."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: Service Account Key Created",
+					"value": "Detects the creation of a service account key. Service account keys are long-lived credentials that increase the risk of unauthorized access to Google Cloud resources."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects when the iam.serviceAccounts.implicitDelegation permission is abused to generate access tokens from a more privileged service account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects when a service account uses the serviceAccounts.signJwt method to generate an access token for another service account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects cross-project use of the iam.serviceAccounts.getOpenIdToken IAM permission."
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects cross-project use of the iam.serviceAccounts.getAccessToken IAM permission."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1550",
+			"tactic": "lateral-movement",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Initial Access: Dormant Service Account Key Created",
+					"value": "Detects events where a key is created for a dormant user-managed service account. In this context, a service account is considered dormant if it has been inactive for more than 180 days."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: Service Account Key Created",
+					"value": "Detects the creation of a service account key. Service account keys are long-lived credentials that increase the risk of unauthorized access to Google Cloud resources."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects when the iam.serviceAccounts.implicitDelegation permission is abused to generate access tokens from a more privileged service account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects when a service account uses the serviceAccounts.signJwt method to generate an access token for another service account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects cross-project use of the iam.serviceAccounts.getOpenIdToken IAM permission."
+				},
+				{
+					"name": "Privilege Escalation: Suspicious Token Generation",
+					"value": "Detects cross-project use of the iam.serviceAccounts.getAccessToken IAM permission."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
 			"techniqueID": "T1491",
 			"tactic": "impact",
 			"color": "#a1d99b",
@@ -2456,6 +2982,176 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1535",
+			"tactic": "defense-evasion",
+			"color": "#fcf26b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: New Geography",
+					"value": "Detection of IAM user and service accounts accessing Google Cloud from anomalous locations, based on the geolocation of the requesting IP addresses."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Org policy location restriction",
+					"value": "The Organization Policy gcp.resourceLocations constraint lets you restrict the creation of new resources to Cloud Regions you select."
+				},
+				{
+					"name": "Persistence: New API Method",
+					"value": "Detection of anomalous usage of Google Cloud services by IAM service accounts."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1074.002",
+			"tactic": "collection",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Exfiltration: BigQuery Data Exfiltration",
+					"value": "Resources owned by the protected organization that are saved outside of the organization, including copy or transfer operations."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: BigQuery Data to Google Drive",
+					"value": "A BigQuery resource owned by the protected organization is saved, through extraction operations, to a Google Drive folder."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: Move to Public BigQuery resource",
+					"value": "A BigQuery resource is saved to a public resource owned by your organization."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: Cloud SQL Data Exfiltration",
+					"value": "Live instance data exported to a Cloud Storage bucket outside of the organization."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: Cloud SQL Restore Backup to External Organization",
+					"value": "Detects events where the backup of a Cloud SQL instance is restored to an instance outside of the organization."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1657",
+			"tactic": "impact",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(VMTD) Malware: Malicious file on disk (YARA)",
+					"value": "Matches signatures that are used by known malware."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Malware: bad domain",
+					"value": "Detection of malware based on a connection to, or a lookup of, a known bad domain."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Malware: bad IP",
+					"value": "Detection of malware based on a connection to a known bad IP address."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: BigQuery Data Exfiltration",
+					"value": "Resources owned by the protected organization that are saved outside of the organization, including copy or transfer operations."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: Cloud SQL Data Exfiltration",
+					"value": "Live instance data exported to a Cloud Storage bucket outside of the organization."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Account Disabled Hijacked",
+					"value": "A user's account was suspended due to suspicious activity."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Suspicious Login Blocked",
+					"value": "A suspicious login to a user's account was detected and blocked."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1619",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: New API Method",
+					"value": "Detection of anomalous usage of Google Cloud services by IAM service accounts."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Discovery: Information Gathering Tool Used",
+					"value": "Detects the use of ScoutSuite, a cloud security auditing tool that is known to be used by threat actors."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Discovery: Unauthorized Service Account API Call",
+					"value": "Detects when a service account makes an unauthorized cross-project API call."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1654",
+			"tactic": "discovery",
+			"color": "#fcf26b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [
+				{
+					"label": "(SHA) Public log bucket",
+					"url": "A storage bucket is public and used as a log sink, meaning that anyone on the internet can access logs stored in this bucket."
+				}
+			],
+			"showSubtechniques": false
+		},
+		{
 			"techniqueID": "T1204",
 			"tactic": "execution",
 			"color": "#a1d99b",
@@ -2490,6 +3186,64 @@
 			],
 			"links": [],
 			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1606",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Credential Access: Failed Attempt to Approve Kubernetes Certificate Signing Request (CSR)",
+					"value": "Someone attempted to manually approve a certificate signing request (CSR) but the action failed. Creating a certificate for cluster authentication is a common method for attackers to create persistent access to a compromised cluster."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Credential Access: Manually Approved Kubernetes Certificate Signing Request (CSR)",
+					"value": "Someone manually approved a certificate signing request (CSR). Creating a certificate for cluster authentication is a common method for attackers to create persistent access to a compromised cluster."
+				}
+			],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1621",
+			"tactic": "credential-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Impair Defenses: Two Step Verification Disabled",
+					"value": "A user disabled 2-step verification."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Account Disabled Hijacked",
+					"value": "A user's account was suspended due to suspicious activity."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Disabled Password Leak",
+					"value": "A user's account is disabled because a password leak was detected."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Suspicious Login Blocked",
+					"value": "A suspicious login to a user's account was detected and blocked."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1212",
@@ -2607,6 +3361,42 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1566",
+			"tactic": "initial-access",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Malware: bad domain",
+					"value": "Detection of malware based on a connection to, or a lookup of, a known bad domain."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Malware: bad IP",
+					"value": "Detection of malware based on a connection to a known bad IP address."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Account Disabled Hijacked",
+					"value": "A user's account was suspended due to suspicious activity."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: New Geography",
+					"value": "Detection of IAM user and service accounts accessing Google Cloud from anomalous locations, based on the geolocation of the requesting IP addresses."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
 			"techniqueID": "T1531",
 			"tactic": "impact",
 			"color": "#a1d99b",
@@ -2623,6 +3413,85 @@
 				{
 					"name": "Impact: Service API Disabled",
 					"value": "Detects when a Google Cloud service API is disabled in a production environment."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Impact: Billing Disabled",
+					"value": "Detects when billing has been disabled for multiple projects in an organization within a short time period."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1546",
+			"tactic": "privilege-escalation",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: GCE Admin Added SSH Key",
+					"value": "Detection of a modification to the Compute Engine instance metadata ssh key value on an established instance (older than 1 week)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: GCE Admin Added Startup Script",
+					"value": "Detection of a modification to the Compute Engine instance metadata startup script value on an established instance (older than 1 week)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: Unmanaged Account Granted Sensitive Role",
+					"value": "Detection of a sensitive role being granted to an unmanaged account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: Global Startup Script Added",
+					"value": "Detects when a global startup script is added to a project."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1546",
+			"tactic": "persistence",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: GCE Admin Added SSH Key",
+					"value": "Detection of a modification to the Compute Engine instance metadata ssh key value on an established instance (older than 1 week)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: GCE Admin Added Startup Script",
+					"value": "Detection of a modification to the Compute Engine instance metadata startup script value on an established instance (older than 1 week)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: Unmanaged Account Granted Sensitive Role",
+					"value": "Detection of a sensitive role being granted to an unmanaged account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: Global Startup Script Added",
+					"value": "Detects when a global startup script is added to a project."
 				}
 			],
 			"links": [],
@@ -2687,6 +3556,28 @@
 			"showSubtechniques": true
 		},
 		{
+			"techniqueID": "T1656",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: Impersonation Role Granted For Dormant Service Account",
+					"value": "Detects events where a principal is granted permissions to impersonate a dormant user-managed service account. In this context, a service account is considered dormant if it has been inactive for more than 180 days."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Anomalous Impersonation of Service Account for Admin Activity",
+					"value": "Detects when a potentially anomalous impersonated service account is used for an administrative activity."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
 			"techniqueID": "T1213",
 			"tactic": "collection",
 			"color": "#a1d99b",
@@ -2723,6 +3614,56 @@
 			"showSubtechniques": true
 		},
 		{
+			"techniqueID": "T1537",
+			"tactic": "exfiltration",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Exfiltration: BigQuery Data Exfiltration",
+					"value": "Resources owned by the protected organization that are saved outside of the organization, including copy or transfer operations."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: BigQuery Data Extraction",
+					"value": "A BigQuery resource owned by the protected organization is saved, through extraction operations, to a Cloud Storage bucket outside the organization."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: BigQuery Data to Google Drive",
+					"value": "A BigQuery resource owned by the protected organization is saved, through extraction operations, to a Google Drive folder."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: Move to Public BigQuery resource",
+					"value": "A BigQuery resource is saved to a public resource owned by your organization."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: Cloud SQL Data Exfiltration",
+					"value": "Live instance data exported to a Cloud Storage bucket outside of the organization."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Exfiltration: Cloud SQL Restore Backup to External Organization",
+					"value": "Detects events where the backup of a Cloud SQL instance is restored to an instance outside of the organization."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
 			"techniqueID": "T1189",
 			"tactic": "initial-access",
 			"color": "#a1d99b",
@@ -2739,6 +3680,27 @@
 				{
 					"name": "Initial Access: Account Disabled Hijacked",
 					"value": "A user's account was suspended due to suspicious activity."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: New Geography",
+					"value": "Detection of IAM user and service accounts accessing Google Cloud from anomalous locations, based on the geolocation of the requesting IP addresses."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: New User Agent",
+					"value": "Detection of IAM service accounts accessing Google Cloud from anomalous or suspicious user agents."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Evasion: Access from Anonymizing Proxy",
+					"value": "Detection of Google Cloud service modifications that originated from anonymous proxy IP addresses, like Tor IP addresses."
 				}
 			],
 			"links": [],
@@ -2765,6 +3727,63 @@
 			],
 			"links": [],
 			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1651",
+			"tactic": "execution",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "(SHA) Default service account used",
+					"value": "The default Compute Engine service account has the Editor role on the project, which allows read and write access to most Google Cloud services. To defend against privilege escalations and unauthorized access, don't use the default Compute Engine service account."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "(SHA) Admin service account",
+					"value": "A service account in your organization or project has Admin, Owner, or Editor privileges assigned to it. These roles have broad permissions and shouldn't be assigned to service accounts."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Excessive Permission Denied Actions",
+					"value": "Detects events where a principal repeatedly triggers permission denied errors by attempting changes across multiple methods and services."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Persistence: GCE Admin Added Startup Script",
+					"value": "Detection of a modification to the Compute Engine instance metadata startup script value on an established instance (older than 1 week)."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Anomalous Impersonation of Service Account for Admin Activity",
+					"value": "Detects when a potentially anomalous impersonated service account is used for an administrative activity."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Anomalous Multistep Service Account Delegation for Admin Activity",
+					"value": "Detects when an anomalous multistep delegated request is found for an administrative activity."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Privilege Escalation: Anomalous Service Account Impersonator for Admin Activity",
+					"value": "Detects when a potentially anomalous caller/impersonator in a delegation chain is used for an administrative activity."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1136",
@@ -2829,6 +3848,78 @@
 				{
 					"name": "(CTD)Execution: Local Reconnaissance Tool Execution",
 					"value": "A local reconnaissance tool not typically associated with the container or environment was executed, suggesting an attempt to gather internal system information."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1538",
+			"tactic": "discovery",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Persistence: New Geography",
+					"value": "Detection of IAM user and service accounts accessing Google Cloud from anomalous locations, based on the geolocation of the requesting IP addresses."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Account Disabled Hijacked",
+					"value": "A user's account was suspended due to suspicious activity."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Government Based Attack",
+					"value": "Government-backed attackers might have tried to compromise a user account or computer."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Initial Access: Suspicious Login Blocked",
+					"value": "A suspicious login to a user's account was detected and blocked."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1648",
+			"tactic": "execution",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Malware: Cryptomining Bad IP",
+					"value": "Detection of cryptomining based on a connection to a known mining IP address."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Malware: Cryptomining Bad Domain",
+					"value": "Detection of cryptomining based on a connection to, or a lookup of, a known mining domain."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Impact: Suspicious Kubernetes Container Names - Coin Mining",
+					"value": "Someone deployed a Pod with a naming convention similar to common cryptocurrency coin miners. This may be an attempt by an attacker who has achieved initial access to the cluster to use the cluster's resources for cryptocurrency mining."
+				},
+				{
+					"divider": true
+				},
+				{
+					"name": "Resource Development: Offensive Security Distro Activity",
+					"value": "Detects successful Google Cloud resource manipulations from known penetration testing or offensive security distros."
 				}
 			],
 			"links": [],

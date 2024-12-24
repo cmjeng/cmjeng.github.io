@@ -9,19 +9,13 @@
 	"description": "",
 	"filters": {
 		"platforms": [
-			"Windows",
-			"Linux",
-			"macOS",
-			"Network",
-			"PRE",
-			"Containers",
 			"IaaS",
 			"SaaS",
 			"Office Suite",
 			"Identity Provider"
 		]
 	},
-	"sorting": 0,
+	"sorting": 2,
 	"layout": {
 		"layout": "side",
 		"aggregateFunction": "average",
@@ -127,7 +121,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1490",
@@ -290,7 +284,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1069.003",
@@ -435,7 +429,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1567.002",
@@ -660,7 +654,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1070",
@@ -859,7 +853,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1098",
@@ -1134,7 +1128,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1078",
@@ -1205,7 +1199,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1078",
@@ -2034,7 +2028,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1588",
@@ -2079,7 +2073,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1134.001",
@@ -2300,7 +2294,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1021.001",
@@ -2345,7 +2339,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1046",
@@ -2463,7 +2457,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1087.004",
@@ -2488,7 +2482,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1049",
@@ -2644,7 +2638,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1578.005",
@@ -2709,7 +2703,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1530",
@@ -2748,7 +2742,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1555.006",
@@ -2799,7 +2793,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1525",
@@ -2950,7 +2944,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1491.001",
@@ -3185,7 +3179,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1606",
@@ -3207,7 +3201,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1621",
@@ -3553,7 +3547,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1656",
@@ -3611,7 +3605,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1537",
@@ -3726,7 +3720,7 @@
 				}
 			],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1651",
@@ -3793,7 +3787,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1136.003",
@@ -3933,7 +3927,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": true
+			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1484",
@@ -4020,6 +4014,21 @@
 				{
 					"name": "(VMTD) Malware: Malicious file on disk",
 					"value": "Matches signatures that are used by known malware."
+				}
+			],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1666",
+			"tactic": "defense-evasion",
+			"color": "#a1d99b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [
+				{
+					"name": "Defense Evasion: Modify VPC Service Control",
+					"value": "Detects a change to an existing VPC Service Controls perimeter that would lead to a reduction in the protection offered by that perimeter."
 				}
 			],
 			"links": [],
